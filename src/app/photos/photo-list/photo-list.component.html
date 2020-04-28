@@ -1,0 +1,13 @@
+<!-- filterByDescription recebe dois parâmetros, a lista de imagens (photos) e o critério (filter) -->
+<!-- [photos] => photos.component.ts || "photos" => photos-list.component -->
+<ap-search 
+    (onTyping)="filter = $event" [value]="filter" >
+</ap-search>
+<ap-photos 
+    [photos]="photos | filterByDescription: filter">
+</ap-photos>
+
+<ap-load-button 
+    (click)="load()" 
+    [hasMore]="hasMore">
+</ap-load-button>
